@@ -1,63 +1,102 @@
-[Hux Blog](https://huangxuan.me)
-================================
 
-> I never expect this becomes popular.
+[中文版本说明](./README_CN.md)
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+## 👏🏻 Introduction
 
+This is a minimalist, beautiful, responsive blogging program written in Astro.
 
-[User Manual 👉](_doc/Manual.md)
---------------------------------------------------
+## Preview
 
-### Getting Started
+[https://yufengbiji.com](https://yufengbiji.com)  
 
-1. You will need [Ruby](https://www.ruby-lang.org/en/) and [Bundler](https://bundler.io/) to use [Jekyll](https://jekyllrb.com/). Following [Using Jekyll with Bundler](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/) to fullfill the enviromental requirement.
+[https://astro.yufengbiji.com](https://astro.yufengbiji.com)
 
-2. Installed dependencies in the `Gemfile`:
+### Home
 
-```sh
-$ bundle install 
+![首页](./public/preview/preview_index.png)
+
+### Dark mode
+
+![文章黑暗模式](./public/preview/preview_dark.png?)
+
+### Normal article
+
+![普通文章模式](./public/preview/preview_light.png)
+
+### Syntax highlighting
+
+![Syntax](./public/preview/preview_syntaxHighlighting.png)
+
+### Three display model of images
+
+![](./public/preview/preview_different_mode.png)
+
+The three display modes of images are: `wide`, `big`, `inline`.
+When you edit your markdown file, you can add `wide` or `big` or `inline` to the image alt, like this:
+
+```markdown
+![alt content|wide](a.png)
 ```
 
-3. Serve the website (`localhost:4000` by default):
+<strong>The Separator is `|`, and the default mode is `big`.</strong>
 
-```sh
-$ bundle exec jekyll serve  # alternatively, npm start
+## 🚀 Project Structure
+
+In this Astro project, you'll see the following folders and files:
+
+```
+|-- README.md
+|-- astro.config.mjs
+|-- package.json
+|-- public
+|   |-- favicon.svg
+|   `-- static
+|-- src
+|   |-- components
+|   |   |-- BaseHead.astro // common <head> tags
+|   |   |-- Footer.astro
+|   |   |-- Header.astro
+|   |   `-- Navigation.astro
+|   |-- consts.js
+|   |-- env.d.ts
+|   |-- layouts
+|   |   |-- BaseLayout.astro
+|   |   |-- MarkdownPost.astro
+|   |   |-- MoreTile.astro
+|   |   `-- Tile.astro
+|   |-- pages
+|   |   |-- about.astro
+|   |   |-- archive.astro
+|   |   |-- index.astro
+|   |   |-- posts 
+|   |   |   |-- some markdown post.md // markdown post 
+|   |   |-- rss.xml.js // RSS feed
+|   |   `-- tags
+|   |       `-- [tag].astro // dynamic route of all posts with a given tag
+|   |-- styles
+|   |   `-- global.css // global styles
+|   `-- utils.js
 ```
 
-### Development (Build From Source)
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-To modify the theme, you will need [Grunt](https://gruntjs.com/). There are numbers of tasks you can find in the `Gruntfile.js`, includes minifing JavaScript, compiling `.less` to `.css`, adding banners to keep the Apache 2.0 license intact, watching for changes, etc. 
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Yes, they were inherited and are extremely old-fashioned. There is no modularization and transpilation, etc.
+Any static assets, like images, can be placed in the `public/` directory.
 
-Critical Jekyll-related code are located in `_include/` and `_layouts/`. Most of them are [Liquid](https://github.com/Shopify/liquid/wiki) templates.
+## 🧞 Commands
 
-This theme uses the default code syntax highlighter of jekyll, [Rouge](http://rouge.jneen.net/), which is compatible with Pygments theme so just pick any pygments theme css (e.g. from [here](http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html) and replace the content of `highlight.less`.
+All commands are run from the root of the project, from a terminal:
 
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
 
-### Interesting to know more? Checkout the [full user manual](_doc/Manual.md)!
+## 👀 Want to learn more?
 
-
-Other Resources
----------------
-
-Ports
-- [**Hexo**](https://github.com/Kaijun/hexo-theme-huxblog) by @kaijun
-- [**React-SSR**](https://github.com/LucasIcarus/huxpro.github.io/tree/ssr) by @LucasIcarus
-
-[Starter/Boilerplate](https://github.com/huxpro/huxblog-boilerplate)
-- Out of date. Helps wanted for updating it on par with the main repo
-
-Translation
-- [🇨🇳  中文文档（有点过时）](https://github.com/Huxpro/huxpro.github.io/blob/master/_doc/README.zh.md)
-
-
-License
--------
-
-Apache License 2.0.
-Copyright (c) 2015-present Huxpro
-
-Hux Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
-Copyright (c) 2013-2016 Blackrock Digital LLC.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
