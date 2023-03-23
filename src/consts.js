@@ -1,5 +1,5 @@
-export const SITE_TITLE = `Air Blog`;
-export const SITE_DESCRIPTION = 'Site Description';
-export const SITE_EMAIL = 'no.sql@qq.com'
-export const SITE_NAME = 'astro.yufengbiji.com';
-export const SITE_URL = "https://astro.yufengbiji.com";
+export const SITE_TITLE = `Cong Blog`;
+export const SITE_DESCRIPTION = 'Cong的博客';
+export const SITE_EMAIL = '1156557397@qq.com'
+export const SITE_NAME = '9yucong.github.io';
+export const SITE_URL = "https://9yucong.github.io";
